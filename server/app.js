@@ -1,11 +1,10 @@
 const express = require('express')
 const app = express()
+const todoRouter = require('./routes/todo.routes')
 
 app.use(express.json())
+app.use('/api/todos', todoRouter)
 
-app.get('/',(req,res)=>{
-    res.status(200).json({success: true})
-})
 
 app.get('/api/health',(req,res)=>{
     res.status(200).json({status:'ok'})
