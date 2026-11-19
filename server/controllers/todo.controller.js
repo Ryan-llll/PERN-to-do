@@ -18,7 +18,7 @@ const get_one_todo = (req,res) =>{
     }
     res.status(200).json({success:true,data:todo})
     
-}
+}  
 
 
 const create_todo = (req,res) =>{
@@ -62,4 +62,4 @@ const delete_todo = (req,res) =>{
 }
 
 
-module.exports = {get_todos, get_one_todo, create_todo, update_todo, delete_todo}
+export {get_todos, get_one_todo, create_todo, update_todo, delete_todo}
