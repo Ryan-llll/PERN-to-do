@@ -1,6 +1,6 @@
 import express from 'express'
 const app = express()
-import todoRouter from './routes/todo.routes.js'
+import todoRouter from './routes/todo.routes.js' 
 
 app.use(express.json())
 app.use('/api/todos', todoRouter)
