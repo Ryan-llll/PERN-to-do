@@ -1,9 +1,12 @@
-const express = require('express')
+import express from 'express'
 const app = express()
-const todoRouter = require('./routes/todo.routes')
+import todoRouter from './routes/todo.routes.js' 
+import authRouter from './routes/auth.routes.js'
+import auth from './middleware/auth.js'
 
 app.use(express.json())
-app.use('/api/todos', todoRouter)
+app.use('/api/todos', auth, todoRouter)
+app.use('/api/auth', authRouter)
 
 
 app.get('/api/health',(req,res)=>{
@@ -11,4 +14,4 @@ app.get('/api/health',(req,res)=>{
 })
 
 
-module.exports = app   
+export default app   
